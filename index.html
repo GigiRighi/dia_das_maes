@@ -7,16 +7,9 @@
     <link rel="stylesheet" href="index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,700;1,700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,700;1,700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <div class="decoracao-fundo">
-        <span class="coracao">❤️</span>
-        <span class="coracao">🌸</span>
-        <span class="coracao">✨</span>
-        <span class="coracao">❤️</span>
-    </div>
 
     <header class="topo-site">
         <div class="header-content">
@@ -26,7 +19,7 @@
     </header>
 
     <main class="album-container">
-        <h1 id="frase">Carregando...</h1>
+        <h1 id="frase">Carregando memórias...</h1>
         
         <div class="moldura-wrapper">
             <div class="clipe"></div>
@@ -50,6 +43,20 @@
             </div>
         </article>
     </main>
+
+    <div class="player-musica">
+        <button id="btnMusica" class="botao-musica" onclick="toggleMusica()">
+            <div class="icones-wrapper">
+                <span id="icone-play">🎵</span>
+                <span id="icone-pause" class="escondido">⏸️</span>
+            </div>
+            <span class="texto-botao">Nossa Trilha</span>
+        </button>
+    </div>
+
+    <audio id="musicaFundo" loop>
+        <source src="musica.mp3" type="audio/mpeg">
+    </audio>
 
     <footer class="rodape">
         Com amor, sua eterna menininha.
