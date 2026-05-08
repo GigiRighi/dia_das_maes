@@ -1,3 +1,4 @@
+// Listas de conteúdo
 const listaFrases = [
     "Réveillon com a família", "Festa com a mamis", "Vovó no chá de bebê da Heleninha",
     "Interlagos com a família", "Réveillon com a mamis", "Mamis dançando no baile de formatura com o Biel",
@@ -17,33 +18,67 @@ const listaImagens = [
     "fotos/f16.jpg", "fotos/f17.jpg", "fotos/f18.jpg", "fotos/f19.jpg", "fotos/f20.jpg"
 ];
 
+// Seleção de elementos do DOM
 const fraseElement = document.getElementById('frase');
 const imagemElement = document.getElementById('imagem');
 const musica = document.getElementById('musicaFundo');
 const btnMusica = document.getElementById('btnMusica');
 const iconePlay = document.getElementById('icone-play');
 const iconePause = document.getElementById('icone-pause');
+const landingPage = document.getElementById('landing-page');
 
 let indiceAtual = 0;
+const totalFotos = listaFrases.length;
 
+/**
+ * FUNÇÃO DA LANDING PAGE
+ * Chamada ao clicar no coração da página inicial
+ */
+function entrarNoSite() {
+    // Esconde a tela de entrada com o efeito definido no CSS
+    landingPage.classList.add('esconder-landing');
+    
+    // Inicia a música (os navegadores permitem o áudio após este clique)
+    if (musica.paused) {
+        toggleMusica();
+    }
+}
+
+/**
+ * FUNÇÃO PARA ATUALIZAR FOTO E FRASE
+ */
 function atualizarConteudo() {
+    // Efeito de sumir
     imagemElement.style.opacity = 0;
+    
     setTimeout(() => {
         fraseElement.textContent = listaFrases[indiceAtual];
         imagemElement.src = listaImagens[indiceAtual];
+        // Efeito de aparecer
         imagemElement.style.opacity = 1;
     }, 200);
 }
 
+/**
+ * FUNÇÃO PARA MUDAR PARA A PRÓXIMA FOTO
+ */
 function proximaFoto() {
-    if (musica.paused) toggleMusica();
-    indiceAtual = (indiceAtual + 1) % listaFrases.length;
+    indiceAtual++;
+    
+    // Se chegar no fim da lista, volta para a primeira foto (índice 0)
+    if (indiceAtual >= totalFotos) {
+        indiceAtual = 0;
+    }
+    
     atualizarConteudo();
 }
 
+/**
+ * FUNÇÃO DE CONTROLE DO PLAYER DE ÁUDIO
+ */
 function toggleMusica() {
     if (musica.paused) {
-        musica.play().catch(e => console.log("Erro ao tocar áudio:", e));
+        musica.play().catch(e => console.log("Aguardando interação para tocar áudio."));
         btnMusica.classList.add('tocando');
         iconePlay.classList.add('escondido');
         iconePause.classList.remove('escondido');
@@ -55,4 +90,5 @@ function toggleMusica() {
     }
 }
 
+// Inicializa a primeira imagem e frase assim que a página carregar
 window.onload = atualizarConteudo;
