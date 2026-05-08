@@ -22,7 +22,7 @@ const listaFrases = [
 ];
 
 const listaImagens = [
-    "fotos/f10.jpg", "fotos/f2.JPG", "fotos/f3.JPG", "fotos/f4.JPG", "fotos/f5.jpg",
+    "fotos/f1.JPG", "fotos/f2.JPG", "fotos/f3.JPG", "fotos/f4.JPG", "fotos/f5.jpg",
     "fotos/f6.jpg", "fotos/f7.jpg", "fotos/f8.jpg", "fotos/f9.jpg", "fotos/f10.jpg",
     "fotos/f11.jpg", "fotos/f12.jpg", "fotos/f13.JPG", "fotos/f14.jpg", "fotos/f15.jpg",
     "fotos/f16.jpg", "fotos/f17.jpg", "fotos/f18.jpg", "fotos/f19.jpg", "fotos/f20.jpg"
