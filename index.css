@@ -1,0 +1,198 @@
+:root {
+    --cor-principal: #d81b60;
+    --cor-suave: #ffb7b7;
+    --fundo-gradiente: linear-gradient(135deg, #fff5f5 0%, #ffe3e3 100%);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background: var(--fundo-gradiente);
+    font-family: 'Poppins', sans-serif;
+    color: #4e342e;
+    overflow-x: hidden;
+    padding-top: 140px; /* Espaço para o header maior */
+}
+
+/* Header maior e elegante */
+.topo-site {
+    width: 100%;
+    height: 120px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(216, 27, 96, 0.1);
+}
+
+.header-content { text-align: center; }
+
+.logo-dia {
+    font-family: 'Lobster Two', cursive;
+    font-size: 2.5rem;
+    color: var(--cor-principal);
+    display: block;
+}
+
+.sub-header {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #8d6e63;
+}
+
+/* Título dinâmico */
+#frase {
+    font-family: 'Lobster Two', cursive;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-align: center;
+    padding: 0 20px;
+}
+
+/* Moldura e Clipe */
+.album-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.moldura-wrapper {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.clipe {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    background: #bdc3c7;
+    border-radius: 50%;
+    z-index: 5;
+    border: 4px solid #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.photo-container {
+    background: white;
+    padding: 15px 15px 60px 15px;
+    box-shadow: 20px 20px 60px #d1d1d1, -20px -20px 60px #ffffff;
+    border-radius: 5px;
+    transform: rotate(2deg);
+}
+
+#imagem {
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.legenda-clique {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
+
+/* Cartinha Estilizada */
+.carta-mae {
+    background: #fff;
+    width: 95%;
+    max-width: 750px;
+    padding: 40px;
+    border-radius: 30px 0 30px 0;
+    position: relative;
+    box-shadow: 10px 10px 30px rgba(0,0,0,0.03);
+    margin-bottom: 60px;
+}
+
+.selo {
+    position: absolute;
+    top: -15px;
+    right: 20px;
+    background: var(--cor-principal);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    transform: rotate(5deg);
+}
+
+.texto-carta p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.final-amor {
+    font-family: 'Lobster Two', cursive;
+    font-size: 1.8rem;
+    color: var(--cor-principal);
+    text-align: center;
+}
+
+/* Animação de Corações ao fundo */
+.decoracao-fundo {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.coracao {
+    position: absolute;
+    font-size: 1.5rem;
+    animation: flutuar 10s infinite linear;
+    opacity: 0.2;
+}
+
+@keyframes flutuar {
+    0% { transform: translateY(100vh) rotate(0deg); }
+    100% { transform: translateY(-10vh) rotate(360deg); }
+}
+
+/* Posicionamento dos corações */
+.coracao:nth-child(1) { left: 10%; animation-duration: 8s; }
+.coracao:nth-child(2) { left: 80%; animation-duration: 12s; }
+.coracao:nth-child(3) { left: 50%; animation-duration: 10s; }
+.coracao:nth-child(4) { left: 25%; animation-duration: 15s; }
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .logo-dia { font-size: 1.8rem; }
+    .topo-site { height: 100px; }
+    body { padding-top: 110px; }
+    .carta-mae { padding: 25px; }
+}
+
+/* --- ESTILO DO RODAPÉ --- */
+.rodape {
+    width: 100%;
+    padding: 30px 20px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.5); /* Fundo semi-transparente */
+    color: #8d6e63;
+    font-size: 0.9rem;
+    font-style: italic;
+    border-top: 1px solid rgba(216, 27, 96, 0.1);
+    margin-top: auto; /* Garante que ele fique no final se houver pouco conteúdo */
+}
+
+/* Um detalhe extra: animação suave no texto do rodapé */
+.rodape::before {
+    content: "✨ ";
+}
+.rodape::after {
+    content: " ✨";
+}
